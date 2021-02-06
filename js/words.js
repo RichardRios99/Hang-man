@@ -64,7 +64,7 @@ const words = [
 'icebox',
 'injury',
 'ivory',
-'ivy',
+// 'ivy',
 'jackpot',
 'jawbreaker',
 'jaywalk',
