@@ -24,7 +24,7 @@
 
 // const words = ['apples','bannaa','jen','richie','beach','happy','money','sunday',]
 // import * words from 'js/words.js'
-import {words} from "words.js"
+console.log(words)
 const $mainDiv = $('<div>').addClass('main-container')
 // $('body').append($mainDiv)
 // console.log($mainDiv)

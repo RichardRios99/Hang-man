@@ -9,10 +9,8 @@ body {
 
 .container {
 	display: flex;
-	/*flex-wrap: wrap;*/
 	flex-direction: row;
-	/*align-content: space-evenly;*/
-	/*justify-content: center;*/
+
 }
 
 .letters {
@@ -27,8 +25,6 @@ body {
 	padding-top: 0px;
 	flex-grow: 1;
 	padding: 6px;
-
-
 }
 h1 {
 	color: rgb(254, 189, 105);
@@ -38,31 +34,26 @@ h1 {
 	justify-content: center;
 	padding: 5px;
 	margin-left: 10px;
-	
-	/*color: red;*/
-	/*padding-right: 3px*/
 }
 
 #main-word {
 	color: red;
 	border: rgb(55, 71, 90);
-	text-decoration: underline ;
-	/*display: flex;*/
-	/*justify-content: center;*/
+	
 }
 
 .main-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	/*border: solid black;*/
+	
 }
 
 .main-word-letters {
+	color: red;
 	text-decoration: underline black;
-	text-underline-position: all;
+	 text-decoration-color:rgb(254, 189, 105);
+	 text-underline-position: under;
 
 	border: none;
-	color: red;
-
 }
