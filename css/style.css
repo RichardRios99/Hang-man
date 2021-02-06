@@ -23,8 +23,8 @@ body {
 	align-content: stretch;
 	align-items: stretch;
 	padding-top: 0px;
-	flex-grow: 1;
-	padding: 6px;
+	flex-grow: ;
+	padding: 8px;
 }
 h1 {
 	color: rgb(254, 189, 105);
@@ -37,7 +37,7 @@ h1 {
 }
 
 #main-word {
-	color: red;
+	color: rgb(55, 71, 90);
 	border: rgb(55, 71, 90);
 	
 }
@@ -50,7 +50,7 @@ h1 {
 }
 
 .main-word-letters {
-	color: red;
+	color: rgb(55, 71, 90);
 	text-decoration: underline black;
 	 text-decoration-color:rgb(254, 189, 105);
 	 text-underline-position: under;
