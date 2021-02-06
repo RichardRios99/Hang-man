@@ -1,0 +1,68 @@
+body {
+	background-color: rgb(55, 71, 90);
+	display: flex;
+	align-content: center;
+	flex-direction: column;
+}
+
+
+
+.container {
+	display: flex;
+	/*flex-wrap: wrap;*/
+	flex-direction: row;
+	/*align-content: space-evenly;*/
+	/*justify-content: center;*/
+}
+
+.letters {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	max-width: 20%;
+	max-height: 20%;
+	justify-content:center;
+	align-content: stretch;
+	align-items: stretch;
+	padding-top: 0px;
+	flex-grow: 1;
+	padding: 6px;
+
+
+}
+h1 {
+	color: rgb(254, 189, 105);
+	border: solid rgb(254, 189, 105) 2px;
+	border-radius: 10% / 20%;
+	display:flex;
+	justify-content: center;
+	padding: 5px;
+	margin-left: 10px;
+	
+	/*color: red;*/
+	/*padding-right: 3px*/
+}
+
+#main-word {
+	color: red;
+	border: rgb(55, 71, 90);
+	text-decoration: underline ;
+	/*display: flex;*/
+	/*justify-content: center;*/
+}
+
+.main-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	/*border: solid black;*/
+}
+
+.main-word-letters {
+	text-decoration: underline black;
+	text-underline-position: all;
+
+	border: none;
+	color: red;
+
+}
