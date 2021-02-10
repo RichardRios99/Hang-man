@@ -117,15 +117,14 @@ const words = [
 'pixel',
 'pizazz',
 'pneumonia',
-]
-// polka
-// pshaw
-// psyche
-// puppy
-// puzzling
-// quartz
-// queue
-// quips
+'polka',
+'pshaw',
+'psyche',
+'puppy',
+'puzzling',
+'quartz',
+'queue',
+]// quips
 // quixotic
 // quiz
 // quizzes
