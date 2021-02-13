@@ -12,7 +12,7 @@ const usedLetters = []
 const wrongGuesses = []
 const wrongLetters = []
 const correctGueses = []
-// let stickman = []
+let stickman = []
 
 function removeDuplicates(array) {
   array.splice(0, array.length, ...(new Set(array)))
