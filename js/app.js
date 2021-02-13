@@ -1,4 +1,3 @@
-// welcomeModal()
 const alhpebet = 'abcdefghijklmnopqrstuvwxyz'.split('')
 
 const player = class {
@@ -13,10 +12,13 @@ const usedLetters = []
 const wrongGuesses = []
 const wrongLetters = []
 const correctGueses = []
+// let stickman = []
 
 function removeDuplicates(array) {
   array.splice(0, array.length, ...(new Set(array)))
 }
+
+
 
 	const ranWord = words[Math.floor(Math.random() * words.length)]
 
@@ -30,8 +32,20 @@ const lostModal = () => {
 	$lostModal.attr('id','lost-modal')
 	$('#lost-modal-bg').append($lostModal)
 	const $losingMessage = $('<h1>').addClass('losingMessage')
-	$losingMessage.text(`Game Over. the word was ${ranWord} play again?`.toUpperCase())
+	$losingMessage.text(`Game Over! the word was "${ranWord}"`.toUpperCase())
 	$('#lost-modal').append($losingMessage)
+
+
+
+	const $lostModalButton = $('<button>')
+	$lostModalButton.attr('id','lost-modal-buttn')
+
+	$lostModalButton.text('Try Again')
+	$('#lost-modal').append($lostModalButton)
+
+	$('#lost-modal-buttn').click(event => {
+		location.reload()
+	})
 }
 
 const winningModal = () => {
@@ -43,13 +57,132 @@ const winningModal = () => {
 	$winningModal.attr('id','winning-modal')
 	$('#winning-modal-bg').append($winningModal)
 	const $winningMessage = $('<h1>').addClass('winningMessage')
-	$winningMessage.text(`congrats you guessed ${ranWord} correctly`.toUpperCase())
+	$winningMessage.text(`congratulations! you guessed "${ranWord}" correctly`.toUpperCase())
 	$('#winning-modal').append($winningMessage)
+	const $winModalButton = $('<button>')
+	$winModalButton.attr('id','win-modal-buttn')
+
+	$winModalButton.text('Play Again')
+	$('#winning-modal').append($winModalButton)
+
+	$('#win-modal-buttn').click(event => {
+		location.reload()
+	})
+	// $countDown.hide()
 }
 
+// const statingMinutes = 3
+// let time = statingMinutes * 60
+// const $countDown = $('#timer')
+
+
+// function beginCountdown() {
+// 	const minutes = Math.floor(time/60)
+// 	let seconds = time % 60
+// 	$countDown.text(`${minutes}:${seconds}`)
+// 	time --
+
+
+// } 
 
 
 $(() => {
+	const statingMinutes = 1
+	let time = statingMinutes * 60
+	const $countDown = $('#timer')
+// let stopTimer = setInterval(beginCountdown,1000)
+
+function beginCountdown() {
+	const minutes = Math.floor(time/60)
+	let seconds = time % 60
+	$countDown.text(`${minutes}:${seconds}`)
+	time --
+	if ($countDown.text() === '0:0') {
+		$countDown.hide()
+		$()
+		lostModal()
+		$('.main-word-letters').css('color','red')
+
+	}
+	
+	
+}
+
+	// 
+	const welcomeModal = () => {
+
+
+	// setInterval(beginCountdown,1000)
+	const $firstModalBg = $('<div>').addClass('modal-bg')
+	$firstModalBg.attr('id','first-modal-bg')
+	$('body').append($firstModalBg)
+	const  $firstModal = $('<div>').addClass('modal-popup')
+	$firstModal.attr('id','first-popup')
+	$('#first-modal-bg').append($firstModal)
+	const $wlecomeMessage = $('<h1>').addClass('wlecomeMessage')
+	$wlecomeMessage.text('welcome to Hangman'.toUpperCase())
+	$('.modal-popup').append($wlecomeMessage)
+	const $intrusctions = $('<div>').addClass('intrusctions')
+	$('.modal-popup').append($intrusctions)
+	const $modalButton = $('<button>')
+	$modalButton.attr('id','modal-buttn')
+
+	$modalButton.text('play')
+	$('.modal-popup').append($modalButton)
+
+	const $intrusctionsWords = $('<p>').addClass('intrusctionsWords')
+	$intrusctionsWords.text('Use the keypad on the left to guess the letters within the hidden word. Vowels are unlocked after 2 correct letters have been revealed. 10 incorret guesses result in a loss. Use the "Guess" bar at anytime to guess the entire word. Two incorret guesses result in a loss. Hurry, time is running out!')
+	$('.intrusctions').append($intrusctionsWords)
+	$('#modal-buttn').click(event => {
+		// $('#first-modal-bg').hide()
+		setInterval(beginCountdown,1000)
+		$('#first-modal-bg').hide()
+		clearInterval(beginCountdown,1000)
+
+	}) 
+	// $('.modal-popup').append($intrusctions)
+
+
+
+
+}
+// welcomeModal(
+// 	const statingMinutes = 3
+// 	let time = statingMinutes * 60
+// 	const $countDown = $('#timer')
+
+
+// function beginCountdown() {
+// 	const minutes = Math.floor(time/60)
+// 	let seconds = time % 60
+// 	$countDown.text(`${minutes}:${seconds}`)
+// 	time --
+// }
+
+// 	// for (let i = 0; i < alhpebet.length; i++) {
+	// 	$('<img/>',{
+	// 				src:'https://cdn.pixabay.com/photo/2013/07/12/17/12/sad-151795_960_720.png',
+	// 				class:'stickman',
+	// 				id: `alhpebet[i]`,
+	// 			})
+	// }
+
+	// stickman.push($('#man1'))
+	// stickman.push($('#man2'))
+	// stickman.push($('#man3'))
+	// stickman.push($('#man4'))
+	// stickman.push($('#man5'))
+	// stickman.push($('#man6'))
+	// stickman.push($('#man7'))
+	// stickman.push($('#man8'))
+	// stickman.push($('#man9'))
+	// stickman.push($('#man10'))
+	// $('body').append($countDown)
+	$('.stickman').hide()
+	console.log(stickman)
+	// welcomeModal(setInterval(beginCountdown,1000))
+
+	// setInterval(beginCountdown,1000)
 
 	welcomeModal()
 
@@ -92,9 +225,13 @@ $(() => {
 	const clickVowel = () => {
 		$('.vowels').click(event => {
 		usedLetters.push($(event.target).text().toLowerCase())
-		for (let i = 0; i < usedLetters.length; i++) {
-			if (ranWord.includes(usedLetters[i]) === false ) {
-				console.log(`${usedLetters[i]} is not in the word`)
+		for (let j = 0; j < usedLetters.length; j++) {
+			if (ranWord.includes(usedLetters[j]) === false ){
+				
+				
+				$(`#man${j}`).show()
+				// $('.rope-box').append(`.stickman`)
+				console.log(`${usedLetters[j]} is not in the word`)
 			}
 
 		}	
@@ -102,6 +239,7 @@ $(() => {
 			$(event.target).css('color','rgb(55, 71, 90)')
 				for (let i = 0; i < ranWord.length; i ++) {
 					if (($(event.target).text().toLowerCase() === ranWord[i])) {
+						
 						correctGueses.push($(event.target))
 						// removeDuplicates(correctGueses)
 						// console.log(correctGueses)
@@ -119,14 +257,20 @@ $(() => {
 	$('#guess-button').click(event => {
 		let $userGuess = $('#user-guess').val().toLowerCase()
 		if ($userGuess === ranWord) {
-			winningModal()
-			console.log('it works')
 			$('.main-word-letters').css('color','red')
+			// ($countDown).hide()
+
+			winningModal()
+			$countDown.hide()
+
+			console.log('it works')
+			// $('.main-word-letters').css('color','red')
 			// winningModal()
 		}
 		if ($userGuess !== ranWord) {
 			wrongGuesses.push($userGuess)
 			console.log(wrongGuesses)
+
 		}
 		if (wrongGuesses.length === 2) {
 			lostModal()
@@ -149,6 +293,7 @@ $(() => {
 				user.money ++
 			} if (correctGueses.length === ranWord.length) {
 				winningModal()
+				$countDown.hide()
 			}
 			
 		}
@@ -158,9 +303,16 @@ $(() => {
 			clickVowel()
 		}
 		
+	// for(let j = 0; j < stickman.length; j++ ){
 		for (let i = 0; i < usedLetters.length; i++) {
 			if (ranWord.includes(usedLetters[i]) === false ) {
-				// console.log(`hello`)
+
+				
+				$(`#man${i}`).show()
+				// $('.rope-box').append(`#man${i}`)
+				// for(let j = 0; j < stickman.length; j++ ){
+				// $(`#man${Math.floor(Math.random()*10)}`).show()
+		
 				wrongLetters.push(`${usedLetters[i]}`)
 				removeDuplicates(wrongLetters)
 				console.log(wrongLetters)
@@ -171,15 +323,23 @@ $(() => {
 				$('.main-word-letters').css('color','red')
 				removeDuplicates(wrongLetters)
 				lostModal()
+				$countDown.hide()
+
 			}
-		} 
+	
+	}
+
+
 	})
+
+
+
 
 })
 
+// https://i.pinimg.com/originals/c1/02/b5/c102b50a8f497e337bc178fda36e0610.png
 
-
-
+// console.log(Math.floor(Math.random() * -6) -1 )
 
 
 

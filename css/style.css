@@ -162,3 +162,57 @@ p {
 	margin-left: 40%;
 	margin-top: 20%;
 }
+
+#rope-box {
+	position: absolute;
+	height: 100px;
+	width: 60%;
+	background-color: rgb(55, 71, 90);
+	margin-left: 30%;
+	margin-top: 50%;
+	border: solid rgb(254, 189, 105);
+	border-radius: 2px;
+
+}
+.stickman {
+
+	height: 100px;
+	width: 90px;
+}
+#timer {
+	border: none;
+	position: absolute;
+	margin-top:50.2%;
+	margin-right: 100px;
+	height: 100px;
+	width: 100px;
+	font-size: 3em;
+	border: solid;
+	border-bottom: none;
+	border-left: none;
+	border-right: none; 
+	/*text-decoration: underline; */
+
+}
+#lost-modal-buttn {
+	width: 130px;
+	margin-top: 172.797px;
+	margin-left: 224.165px; 
+}
+
+.losingMessage {
+	text-align: center;
+	border: none;
+}
+
+.winningMessage {
+	text-align: center;
+	border: none;
+
+}
+#win-modal-buttn {
+	width: 130px;
+	margin-top: 172.797px;
+	margin-left: 224.165px; 
+}
+}
